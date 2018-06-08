@@ -50,6 +50,16 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>top.catalinali</groupId>
+            <artifactId>product-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>top.catalinali</groupId>
+            <artifactId>order-common</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
