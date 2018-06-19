@@ -54,13 +54,15 @@
             <groupId>top.catalinali</groupId>
             <artifactId>product-common</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>top.catalinali</groupId>
-            <artifactId>product-common</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>top.catalinali</groupId>
-            <artifactId>product-common</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
 
     </dependencies>

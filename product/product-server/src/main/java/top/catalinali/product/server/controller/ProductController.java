@@ -3,6 +3,8 @@ package top.catalinali.product.server.controller;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import top.catalinali.product.common.DecreaseStockInput;
 import top.catalinali.product.common.ProductInfoOutput;
@@ -27,6 +29,7 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping("/product")
+@RefreshScope
 public class ProductController {
 
     @Autowired
@@ -34,6 +37,9 @@ public class ProductController {
 
     @Autowired
     private CategoryService categoryService;
+
+    @Value("${env}")
+    private String env;
 
     /**
      * 1. 查询所有在架的商品
@@ -93,5 +99,10 @@ public class ProductController {
     @PostMapping("/decreaseStock")
     public void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList) {
         productService.decreaseStock(decreaseStockInputList);
+    }
+
+    @GetMapping("/env")
+    public String env() {
+        return this.env;
     }
 }
