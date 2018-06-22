@@ -7,6 +7,16 @@ spring:
         enabled: true
         service-id: config #Eureka Config's name
       profile: dev #profiles
+    stream:
+      bindings:
+        myMessage:
+          group: order
+          content-type: application/json
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 192.168.136.128
+    port: 5672
 #management:
 #  endpoints:
 #    web:
