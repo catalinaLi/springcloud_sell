@@ -33,8 +33,8 @@ public class MqReceiver {
             key = "computer",
             exchange = @Exchange("computerOrder")
     ))
-    private void processComputer(String message) {
-        log.info("MyQueue = {}", message);
+    public void processComputer(String message){
+        log.info(" computer MqReceiver：{}",message);
     }
 }
 

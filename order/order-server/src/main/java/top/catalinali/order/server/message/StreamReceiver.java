@@ -25,12 +25,12 @@ public class StreamReceiver {
     @StreamListener(StreamClient.INPUT)
     @SendTo(StreamClient.INPUT2)
     public String process(OrderDto message) {
-        log.info("StreamReceiver:{}", message);
+        log.info("StreamReceiver1:{}", message);
         return "receiver";
     }
 
     @StreamListener(StreamClient.INPUT2)
     public void process2(String message) {
-        log.info("StreamReceiver:{}", message);
+        log.info("StreamReceiver2:{}", message);
     }
 }

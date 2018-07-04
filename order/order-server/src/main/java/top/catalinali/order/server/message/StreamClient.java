@@ -1,9 +1,7 @@
 package top.catalinali.order.server.message;
 
-import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
-import org.springframework.messaging.SubscribableChannel;
 
 /**
  * @Author: lx
@@ -13,19 +11,19 @@ import org.springframework.messaging.SubscribableChannel;
  */
 public interface StreamClient {
 
-    String INPUT0 = "myMessage0";
+    //String INPUT0 = "myMessage0";
     String INPUT = "myMessage1";
     String INPUT2 = "myMessage2";
 
-    @Input(StreamClient.INPUT)
-    SubscribableChannel input();
+    /*@Input(StreamClient.INPUT0)
+    SubscribableChannel input();*/
 
-    @Output("MyOutput")
+    @Output(StreamClient.INPUT)
     MessageChannel output();
 
-    @Input(StreamClient.INPUT2)
-    SubscribableChannel input2();
+   /* @Input(StreamClient.INPUT2)
+    SubscribableChannel input2();*/
 
-    @Output("MyOutput2")
+    @Output(StreamClient.INPUT2)
     MessageChannel output2();
 }

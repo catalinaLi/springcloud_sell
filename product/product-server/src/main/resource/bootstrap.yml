@@ -7,8 +7,3 @@ spring:
         enabled: true
         service-id: config #Eureka Config's name
       profile: dev #profiles
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: bus-refresh

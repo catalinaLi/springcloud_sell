@@ -10,15 +10,5 @@ spring:
     stream:
       bindings:
         myMessage:
-          group: order
-          content-type: application/json
-  rabbitmq:
-    username: guest
-    password: guest
-    host: 192.168.136.128
-    port: 5672
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: bus-refresh
+          group: order  #消息的分组
+          content-type: application/json #在mq中以json形式展示发送的消息
