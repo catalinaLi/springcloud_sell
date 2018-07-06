@@ -4,7 +4,6 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import org.apache.commons.lang.StringUtils;
-import org.apache.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,8 +40,8 @@ public class TokenFilter extends ZuulFilter {
         HttpServletRequest request = context.getRequest();
         String token = request.getParameter("token");
         if (StringUtils.isEmpty(token)) {
-            context.setSendZuulResponse(false);
-            context.setResponseStatusCode(HttpStatus.SC_UNAUTHORIZED);
+            //context.setSendZuulResponse(false);
+            //context.setResponseStatusCode(HttpStatus.SC_UNAUTHORIZED);
         }
         return null;
     }
