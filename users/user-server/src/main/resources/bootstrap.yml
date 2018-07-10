@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: user #name
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config #Eureka Config's name
+      profile: dev #profiles
